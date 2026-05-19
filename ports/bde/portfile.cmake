@@ -54,6 +54,8 @@ foreach(subpackage IN LISTS SUBPACKAGES)
     vcpkg_cmake_config_fixup(PACKAGE_NAME ${subpackage} CONFIG_PATH /${CMAKE_INSTALL_LIBDIR}/cmake/${subpackage} DO_NOT_DELETE_PARENT_CONFIG_PATH)
 endforeach()
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/${CMAKE_INSTALL_LIBDIR}/cmake" "${CURRENT_PACKAGES_DIR}/debug/${CMAKE_INSTALL_LIBDIR}/cmake")
+file(INSTALL "${CMAKE_CURRENT_LIST_DIR}/libpcre2-8Config.cmake"
+     DESTINATION "${CURRENT_PACKAGES_DIR}/share/libpcre2-8")
 
 # Handle copyright
 vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/LICENSE")
