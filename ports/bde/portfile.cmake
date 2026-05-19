@@ -12,6 +12,8 @@ vcpkg_from_github(
     REF "${BDE_TOOLS_VER}"
     SHA512 209a6803b6b769263e7ec496a122dcd200c3b073665e5fe5ff5fd4c1690df080f00020dfe131ad35305e967bcba9a0a75c224ca5b4804a0349a60d939d1b0060
     HEAD_REF main
+    PATCHES
+        bde-tools-map-pcre2-to-libpcre2-8.patch
 )
 
 message(STATUS "Configure bde-tools-v${BDE_TOOLS_VERSION}")
@@ -54,8 +56,6 @@ foreach(subpackage IN LISTS SUBPACKAGES)
     vcpkg_cmake_config_fixup(PACKAGE_NAME ${subpackage} CONFIG_PATH /${CMAKE_INSTALL_LIBDIR}/cmake/${subpackage} DO_NOT_DELETE_PARENT_CONFIG_PATH)
 endforeach()
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/${CMAKE_INSTALL_LIBDIR}/cmake" "${CURRENT_PACKAGES_DIR}/debug/${CMAKE_INSTALL_LIBDIR}/cmake")
-file(INSTALL "${CMAKE_CURRENT_LIST_DIR}/libpcre2-8Config.cmake"
-     DESTINATION "${CURRENT_PACKAGES_DIR}/share/libpcre2-8")
 
 # Handle copyright
 vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/LICENSE")

@@ -28,13 +28,3 @@ index cd1c4a350..e67841c95 100644
  #endif
  
  #ifndef BDE_DONT_ALLOW_TRANSITIVE_INCLUDES
-diff --git a/groups/bdl/group/bdl.dep b/groups/bdl/group/bdl.dep
-index 91ec53004..c4e3d0e8a 100644
---- a/groups/bdl/group/bdl.dep
-+++ b/groups/bdl/group/bdl.dep
-@@ -1,4 +1,4 @@
- bsl
- # third-party
- inteldfp
--pcre2
-+libpcre2-8

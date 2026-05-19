@@ -1,0 +1,12 @@
+diff --git a/BdeBuildSystem/BdePkgconfigUtils.cmake b/BdeBuildSystem/BdePkgconfigUtils.cmake
+index 0000000..0000000 100644
+--- a/BdeBuildSystem/BdePkgconfigUtils.cmake
++++ b/BdeBuildSystem/BdePkgconfigUtils.cmake
+@@ -18,6 +18,7 @@ _pkgconfig_map_insert(gtest_main     gtest_main)
+ _pkgconfig_map_insert(libevent       event)
+ _pkgconfig_map_insert(protobuf-c     libprotobuf-c)
+ _pkgconfig_map_insert(ssl            libssl)
++_pkgconfig_map_insert(pcre2          libpcre2-8)
+ _pkgconfig_map_insert(svm            libsvm)
+ _pkgconfig_map_insert(uv             libuv)
+ _pkgconfig_map_insert(xercesc        xerces-c)
