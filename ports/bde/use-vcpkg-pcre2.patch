@@ -1,20 +1,3 @@
-diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 07c22f5e6..df2761843 100644
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -9,6 +9,12 @@ if(NOT BBS_BUILD_SYSTEM)
-     bbs_build_tests_with_all()
- endif()
- 
-+if (BDE_USE_EXTERNAL_PCRE2)
-+    find_package(pcre2 CONFIG REQUIRED)
-+    get_target_property(_pcre2_alias_target PCRE2::8BIT ALIASED_TARGET)
-+    add_library(libpcre2-8 ALIAS "${_pcre2_alias_target}")
-+endif()
-+
- add_subdirectory(thirdparty)
- add_subdirectory(groups)
- add_subdirectory(standalones)
 diff --git a/groups/bdl/bdlpcre/bdlpcre_regex.h b/groups/bdl/bdlpcre/bdlpcre_regex.h
 index cd1c4a350..e67841c95 100644
 --- a/groups/bdl/bdlpcre/bdlpcre_regex.h

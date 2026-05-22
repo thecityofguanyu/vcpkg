@@ -40,7 +40,6 @@ vcpkg_cmake_configure(
         -DCMAKE_CXX_STANDARD_REQUIRED=ON
         -DCMAKE_CXX_EXTENSIONS=OFF
         -DBBS_BUILD_SYSTEM=1
-        -DBDE_USE_EXTERNAL_PCRE2=1
         "-DBdeBuildSystem_DIR:PATH=${TOOLS_PATH}/BdeBuildSystem"
 )
 
